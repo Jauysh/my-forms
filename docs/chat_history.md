@@ -53,3 +53,27 @@
   * Мұғалімнің Live мониторы;
   * Сұрақтардың қиындық индексі (Item difficulty analysis);
   * Google Sheets онлайн синхронизациясы, Excel/PDF экспорты.
+
+---
+
+## 2026-10-13 (1-қадам: Next.js жобасы, Прокторинг және Docker құрылды)
+
+### Атқарылған техникалық жұмыстар:
+1. **Next.js 16 (React 19, TypeScript, Tailwind CSS 4)** базалық қосымшасы құрылды.
+2. **Қосымша кітапханалар орнатылды**:
+   * `lucide-react` (интерфейс белгішелері);
+   * `@supabase/supabase-js`, `@supabase/ssr` (Supabase интеграциясы);
+   * `katex`, `@types/katex` (математикалық/физикалық формулаларды көрсету);
+   * `clsx`, `tailwind-merge` (стильдер utility).
+3. **Негізгі модульдер мен компоненттер жазылды**:
+   * [`src/types/exam.ts`](file:///c:/Users/a.jauysh/Desktop/my-forms/src/types/exam.ts) — Сұрақ түрлері, емтихан, нәтиже және прокторинг типтері;
+   * [`src/hooks/useProctoring.ts`](file:///c:/Users/a.jauysh/Desktop/my-forms/src/hooks/useProctoring.ts) — Толық экранды бақылау, беттен кетуді секундпен тіркеу, көшіруді (`Ctrl+C`) бұғаттау;
+   * [`src/components/KaTeXRenderer.tsx`](file:///c:/Users/a.jauysh/Desktop/my-forms/src/components/KaTeXRenderer.tsx) — Формулаларды жоғары сапада визуализациялау;
+   * [`src/app/page.tsx`](file:///c:/Users/a.jauysh/Desktop/my-forms/src/app/page.tsx) — PIN-код арқылы емтиханға кіру және платформа презентациясы;
+   * [`src/app/exam/demo/page.tsx`](file:///c:/Users/a.jauysh/Desktop/my-forms/src/app/exam/demo/page.tsx) — Толыққанды оқушы емтихан тапсыру беті (5 нақты сұрақ, таймер, AI эссе тексеру, қауіпсіздік ескертулері);
+   * [`src/app/teacher/page.tsx`](file:///c:/Users/a.jauysh/Desktop/my-forms/src/app/teacher/page.tsx) — Мұғалімнің Live Classroom Proctoring мониторы, PIN-кодты басқару, Google Sheets/Excel экспорт, Сұрақтар сапасын талдау (Item difficulty);
+   * [`supabase/schema.sql`](file:///c:/Users/a.jauysh/Desktop/my-forms/supabase/schema.sql) — Толық PostgreSQL дерекқор сұлбасы және RLS саясаттары;
+   * [`Dockerfile`](file:///c:/Users/a.jauysh/Desktop/my-forms/Dockerfile) және [`docker-compose.yml`](file:///c:/Users/a.jauysh/Desktop/my-forms/docker-compose.yml) — Оффлайн және локальді режимде контейнерді іске қосу.
+4. **Компиляция мен Тексеру**:
+   * `npm run build` сәтті орындалды (0 қате).
+   * Код толықтай GitHub репозиторийіне жіберілді (`main -> main`).
